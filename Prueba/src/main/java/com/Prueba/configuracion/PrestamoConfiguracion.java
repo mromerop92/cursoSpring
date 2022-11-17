@@ -10,19 +10,19 @@ import javax.sql.DataSource;
 @Configuration
 public class PrestamoConfiguracion {
 
-    @Value("{usr}")
-    private String usr;
+    @Value("${usr}")
+    private String user;
 
-    @Value("{cls}")
-    private String clss;
+    @Value("${cls}")
+    private String cla;
 
 
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl("jdbc:sqlserver://192.168.10.136;database=master;trustServerCertificate=true");
-        dataSource.setUsername(usr);
-        dataSource.setPassword(clss);
+        dataSource.setUsername(user);
+        dataSource.setPassword(cla);
 
         return dataSource;
     }
